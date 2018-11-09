@@ -2,7 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
+const rootElement = document.getElementById("root");
+
 /*
+//initial codesandbox function
 function App() {
   return (
     <div className="App">
@@ -12,21 +15,41 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 */
-/*
-function Pa(props)
-{
-return <p> {props.asba} </p>;
+
+//render element method 1 with jsx
+
+function Pa(props) {
+  return <p> {props.asba} </p>;
 }
-ReactDOM.render(<Pa asba="waaaaaa" />,  document.getElementById('root'));
-*/
+ReactDOM.render(<Pa asba="some text" />, document.getElementById("root"));
 
 /*
+//render element method 2 without jsx
 function Affiche(props) {
   return React.createElement("button", { type: "submit" }, "llllllll");
 }
-const rootElement = document.getElementById("root");
+
 ReactDOM.render(<Affiche label="aaaaaaaa" />, rootElement);
+*/
+/*
+//render element method 3 react’s createElement API
+const inputForm = React.createElement(
+  "form",
+  { target: "_blank", action: "https://www.google.com" },
+  React.createElement("div", null, "enter input then click search"),
+  React.createElement("input", {
+    type: "text",
+    placeholder: "put sthing",
+    className: "input"
+  }),
+  React.createElement(Button, { type: "submit", label: "search" })
+);
+
+function Button(props) {
+  return <button type={props.type}>{props.label}</button>;
+}
+
+ReactDOM.render(inputForm, rootElement);
 */
