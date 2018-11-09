@@ -15,10 +15,18 @@ function App() {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 */
+/*
+function Pa(props)
+{
+return <p> {props.asba} </p>;
+}
+ReactDOM.render(<Pa asba="waaaaaa" />,  document.getElementById('root'));
+*/
 
+/*
 function Affiche(props) {
   return React.createElement("button", { type: "submit" }, "llllllll");
 }
 const rootElement = document.getElementById("root");
-
 ReactDOM.render(<Affiche label="aaaaaaaa" />, rootElement);
+*/
