@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
+import "./buttons.css"
 const rootElement = document.getElementById("root");
 
 /*
@@ -17,13 +18,14 @@ function App() {
 
 ReactDOM.render(<App />, rootElement);
 */
-
+/*
 //render element method 1 with jsx
 
 function Pa(props) {
   return <p> {props.asba} </p>;
 }
 ReactDOM.render(<Pa asba="some text" />, document.getElementById("root"));
+*/
 
 /*
 //render element method 2 without jsx
@@ -53,3 +55,21 @@ function Button(props) {
 
 ReactDOM.render(inputForm, rootElement);
 */
+
+//jsx
+
+const inputForm=<form class="pure-form" action="https://www.google.com">
+<fieldset>
+    <legend>A compact inline form</legend>
+
+    <input type="text" placeholder="click to go to google.com" />
+<Button label="google"  />
+  </fieldset>
+</form>;
+
+function Button(props)
+{
+  return <button className="button button-3d button-action button-pill button-small"  type="submit" > { props.label } </button>
+}
+
+ReactDOM.render(inputForm,rootElement);
