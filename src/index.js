@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -56,6 +57,7 @@ function Button(props) {
 ReactDOM.render(inputForm, rootElement);
 */
 
+/*
 //jsx
 //That is JSX. It’s a compromise that allows 
 //us to write our React components in a syntax 
@@ -77,3 +79,22 @@ function Button(props)
 }
 
 ReactDOM.render(inputForm,rootElement);
+*/
+/*
+//Using JavaScript expressions in JSX
+const Random=()=><div>
+  { Math.floor(Math.random()*10) }
+</div>
+
+ReactDOM.render(<Random />,rootElement);
+
+*/
+/*
+const ErrorMessage=({message,autreVariable})=><div><div style={ {color : 'yellow' , backgroundColor : 'red' } }>
+{message}
+</div>
+<p>{autreVariable}</p>
+</div>;
+
+ReactDOM.render(<ErrorMessage message="erreur" autreVariable="var" />,rootElement);
+*/
