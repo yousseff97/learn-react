@@ -19,7 +19,7 @@ function App() {
 ReactDOM.render(<App />, rootElement);
 */
 /*
-//render element method 1 with jsx
+//render element method 1 
 
 function Pa(props) {
   return <p> {props.asba} </p>;
@@ -28,7 +28,7 @@ ReactDOM.render(<Pa asba="some text" />, document.getElementById("root"));
 */
 
 /*
-//render element method 2 without jsx
+//render element method 2 with jsx
 function Affiche(props) {
   return React.createElement("button", { type: "submit" }, "llllllll");
 }
@@ -57,13 +57,17 @@ ReactDOM.render(inputForm, rootElement);
 */
 
 //jsx
+//That is JSX. It’s a compromise that allows 
+//us to write our React components in a syntax 
+//similar to HTML, which is a pretty good deal.
 
-const inputForm=<form class="pure-form" action="https://www.google.com">
+const inputForm=<form class="pure-form" target="_blank" action="https://www.google.com">
 <fieldset>
     <legend>A compact inline form</legend>
-
-    <input type="text" placeholder="click to go to google.com" />
-<Button label="google"  />
+    <label><input type="text" placeholder="click to go to google.com"
+     styles={{margin : '100000px'}}
+    /></label>
+    <Button label="google"  />
   </fieldset>
 </form>;
 
