@@ -56,8 +56,8 @@ function Button(props) {
 
 ReactDOM.render(inputForm, rootElement);
 */
-
 /*
+
 //jsx
 //That is JSX. It’s a compromise that allows 
 //us to write our React components in a syntax 
@@ -67,7 +67,7 @@ const inputForm=<form class="pure-form" target="_blank" action="https://www.goog
 <fieldset>
     <legend>A compact inline form</legend>
     <label><input type="text" placeholder="click to go to google.com"
-     styles={{margin : '100000px'}}
+     styles={{ margin : '100000px' }}
     /></label>
     <Button label="google"  />
   </fieldset>
@@ -78,8 +78,10 @@ function Button(props)
   return <button className="button button-3d button-action button-pill button-small"  type="submit" > { props.label } </button>
 }
 
-ReactDOM.render(inputForm,rootElement);
+ReactDOM.render(inputForm ,rootElement);
+
 */
+
 /*
 //Using JavaScript expressions in JSX
 const Random=()=><div>
@@ -98,3 +100,78 @@ const ErrorMessage=({message,autreVariable})=><div><div style={ {color : 'yellow
 
 ReactDOM.render(<ErrorMessage message="erreur" autreVariable="var" />,rootElement);
 */
+/*
+//Using a React element within {}
+
+const MaybeError=({msg})=><div>
+{msg && <ErrorMessage message={msg} />}
+</div>
+
+const ErrorMessage=({message})=><div style={ {color : 'yellow' , backgroundColor : 'red' } }>
+{message}
+</div>;
+
+  ReactDOM.render(<MaybeError msg={ (Math.random()*2 > 1) ?'number >1':'' } />,rootElement);
+  */
+
+/*
+  //Using an array map inside {}
+ const Doubler=({ value=[1,2,3] })=><div>
+{ value.map( e => e*2)}
+ </div>;
+
+ReactDOM.render(<Doubler  />,rootElement);
+*/
+/*
+// Example 9 - Creating components using JavaScript classes
+
+class Button extends React.Component
+{
+
+constructor(props){
+super(props);
+this.id=Date.now();
+}
+
+render()
+{
+
+  return <button id={this.id} >id= {this.id +"/"+ this.props.label} </button>
+}
+
+}
+ReactDOM.render(<Button label="do nothing" />,rootElement);
+
+*/
+
+
+class Button extends React.Component
+{
+
+  nombreAppuis=0;
+
+  constructor(props){
+super(props);
+this.id=Date.now();
+}
+
+handleClick=()=>{
+  console.log( `nombre appuis = ${ ++this.nombreAppuis } `);
+}
+
+render()
+{
+  // Wrong:
+//   onClick={this.handleClick()}
+//   Right:
+//   onClick={this.handleClick}
+  return (<button id={this.id}  onClick={ this.handleClick  } > {this.props.label} </button>);
+}
+
+}
+
+ReactDOM.render(<Button label="do nothing" />,rootElement);
+
+
+
+
