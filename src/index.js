@@ -232,14 +232,13 @@ this.setState ({ time : Date.now() })
 
  Button(props)
  {
-   /*
-  return <button className="button button-3d button-box button-jumbo"
-   type={props.type}  onClick={ props.onClick}  ><i className="fa fa-thumbs-up">
+   
+  return <button className="button button-3d button-action button-circle button-jumbo"
+     type={props.type}  onClick={ props.onClick}  ><i className="fa fa-thumbs-up">
    </i>
    </button>;
-   */
+   
 
-   return   <button className="button button-3d button-action button-circle button-jumbo"><i className="fa fa-thumbs-up"></i></button>
 ;
 }
 

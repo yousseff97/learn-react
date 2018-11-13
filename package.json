@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "purecss": "^1.0.0",
     "react": "16.5.2",
     "react-dom": "16.5.2",
