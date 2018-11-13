@@ -1,4 +1,6 @@
 @import "../node_modules/purecss/build/forms.css";
+@import "../node_modules/purecss/build/buttons.css";
+
 .App {
   font-family: sans-serif;
   text-align: center;

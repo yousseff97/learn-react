@@ -144,6 +144,7 @@ ReactDOM.render(<Button label="do nothing" />,rootElement);
 
 */
 
+/*
 
 class Button extends React.Component
 {
@@ -172,6 +173,89 @@ render()
 
 ReactDOM.render(<Button label="do nothing" />,rootElement);
 
+*/
+
+/*
 
 
+class Form extends React.Component
+{
+
+
+handleSubmit=(event)=>{
+event.preventDefault();
+console.log("form preventd");
+
+}
+
+render()
+{
+
+  return <form onSubmit={this.handleSubmit} >
+<button type="submit" >submit</button>
+  </form>;
+
+}
+
+
+}
+
+ReactDOM.render(<Form />,rootElement);
+
+*/
+
+
+class CounterButton extends React.Component
+{
+
+
+state={
+nombreAppuis:0,
+time:Date.now()
+}
+
+
+handleClick=()=>{
+this.setState((prevState)=>{
+return { nombreAppuis : prevState.nombreAppuis + 1};
+});
+
+}
+
+componentDidMount()
+{
+
+setInterval(()=>{ 
+this.setState ({ time : Date.now() })  
+},100);
+}
+
+ Button(props)
+ {
+   /*
+  return <button className="button button-3d button-box button-jumbo"
+   type={props.type}  onClick={ props.onClick}  ><i className="fa fa-thumbs-up">
+   </i>
+   </button>;
+   */
+
+   return   <button className="button button-3d button-action button-circle button-jumbo"><i className="fa fa-thumbs-up"></i></button>
+;
+}
+
+
+render(){
+
+return <div>
+<this.Button  type="submit" onClick={ this.handleClick } />
+<p>nombreAppuis={ this.state.nombreAppuis }</p>
+<p>timestamp={ this.state.time }</p>
+</div> ;
+
+
+}
+
+}
+
+ReactDOM.render(<CounterButton />,rootElement);
 
