@@ -1,9 +1,8 @@
-
 import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
-import "./buttons.css"
+import "./buttons.css";
 const rootElement = document.getElementById("root");
 
 /*
@@ -23,9 +22,9 @@ ReactDOM.render(<App />, rootElement);
 //render element method 1 
 
 function Pa(props) {
-  return <p> {props.asba} </p>;
+  return <p> {props.asb} </p>;
 }
-ReactDOM.render(<Pa asba="some text" />, document.getElementById("root"));
+ReactDOM.render(<Pa asb="some text" />, document.getElementById("root"));
 */
 
 /*
@@ -204,57 +203,45 @@ ReactDOM.render(<Form />,rootElement);
 
 */
 
+class CounterButton extends React.Component {
+  state = {
+    nombreAppuis: 0,
+    time: Date.now()
+  };
 
-class CounterButton extends React.Component
-{
+  handleClick = () => {
+    this.setState(prevState => {
+      return { nombreAppuis: prevState.nombreAppuis + 1 };
+    });
+  };
 
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({ time: Date.now() });
+    }, 100);
+  }
 
-state={
-nombreAppuis:0,
-time:Date.now()
+  Button(props) {
+    return (
+      <button
+        className="button button-3d button-action button-circle button-jumbo"
+        type={props.type}
+        onClick={props.onClick}
+      >
+        <i className="fa fa-thumbs-up" />
+      </button>
+    );
+  }
+
+  render() {
+    return (
+      <div>
+        <this.Button type="submit" onClick={this.handleClick} />
+        <p>nombreAppuis={this.state.nombreAppuis}</p>
+        <p>timestamp={this.state.time}</p>
+      </div>
+    );
+  }
 }
 
-
-handleClick=()=>{
-this.setState((prevState)=>{
-return { nombreAppuis : prevState.nombreAppuis + 1};
-});
-
-}
-
-componentDidMount()
-{
-
-setInterval(()=>{ 
-this.setState ({ time : Date.now() })  
-},100);
-}
-
- Button(props)
- {
-   
-  return <button className="button button-3d button-action button-circle button-jumbo"
-     type={props.type}  onClick={ props.onClick}  ><i className="fa fa-thumbs-up">
-   </i>
-   </button>;
-   
-
-;
-}
-
-
-render(){
-
-return <div>
-<this.Button  type="submit" onClick={ this.handleClick } />
-<p>nombreAppuis={ this.state.nombreAppuis }</p>
-<p>timestamp={ this.state.time }</p>
-</div> ;
-
-
-}
-
-}
-
-ReactDOM.render(<CounterButton />,rootElement);
-
+ReactDOM.render(<CounterButton />, rootElement);
